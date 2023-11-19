@@ -215,13 +215,14 @@ input{
         width: 100vw;
         height: 100vh;
         min-height: 100%;
+        
         margin: unset;
         display: flex;
         flex-direction: column;
     
         .imgBox{
             width: 100%;
-            min-width: 450px;
+           
             position: absolute;
             top: 0;
             left: 0;
@@ -242,7 +243,7 @@ input{
         }
         .formContainer{
             width: 100%;
-            min-width: 300px;
+           
             background-color: white;
             height: fit-content;
             display: flex;
@@ -256,7 +257,7 @@ input{
                 display: flex;
                 flex-direction: column;
                 width: fit-content;
-                min-width: 400px;
+               
                 height: fit-content;
                 >button{
                     width: 100%;
