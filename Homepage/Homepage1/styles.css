@@ -770,6 +770,8 @@ i{
                     height: 100%;
                     object-fit: cover;
                     object-position: center;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
                 }
             }
             &.content{
@@ -778,7 +780,8 @@ i{
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-    
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
                 .content-cv{
                     width: 65%;
                     display: flex;
@@ -1618,6 +1621,8 @@ i{
                     height: 100%;
                     object-fit: cover;
                     object-position: center;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
                 }
             }
             &.content{
@@ -1626,7 +1631,8 @@ i{
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-    
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
                 .content-cv{
                     width: 90%;
                     display: flex;
