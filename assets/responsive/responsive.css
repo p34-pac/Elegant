@@ -91,6 +91,14 @@ section, article,div, main{
         left: 0;
     }
 }
+@keyframes draw-menu-right {
+    from{
+        right: -300px;
+    }
+    to{
+        right: 0;
+    }
+}
 @keyframes draw-menu-back {
     from{
         left: 0;
@@ -99,3 +107,12 @@ section, article,div, main{
         left: -300px;
     }
 }
+@keyframes draw-menu-back-right {
+    from{
+        right: 0;
+    }
+    to{
+        right: -300px;
+    }
+}
+
