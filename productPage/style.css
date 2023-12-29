@@ -831,6 +831,203 @@
 
 
 
+.tabs{
+    width: 85%;
+    height: fit-content;
+    margin: auto;
+}
+.tabs .tabsmenu{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    list-style-type: none;
+    margin-left: 0;
+    padding: 0;
+    padding-left: 2px;
+    border-bottom: 2px solid #c9ccce;
+}
+.tabs .tabsmenu li{
+    width: fit-content;
+    position: relative;
+    font-weight: bolder;
+    color: #676b6d;
+    cursor: pointer;
+}
+.tabs .tabsmenu li:hover{
+    color: #343839;
+    transition-duration: 1s;
+}
+.tabs .tabsmenu li.pres_tab{
+    font-weight: bolder;
+    color: #343839;
+}
+.tabs .tabsmenu li.pres_tab::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #343839;
+    bottom: -7px;
+    font-weight: bolder;
+
+}
+.tabs .tabsmenu li:not(:first-child){
+    margin: 5px;
+    margin-left: 10%;
+}
+.tab-content{
+    width: 100%;
+    height: fit-content;
+}
+.tab-content.reviews h1{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.tab-content.reviews .product-name-rev{
+    margin: 10px;
+    margin-left: 15%;
+    display: block;
+}
+.tab-content.reviews .send-review{
+    width: 99%;
+    border-radius: 10px;
+    margin: auto;
+    height: fit-content;
+    padding: 10px 0;
+    border: 2px solid #c9ccce;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tab-content.reviews .send-review input{
+    width: 80%;
+    height: fit-content;
+    padding: 10px;
+    font-size: 15px;
+}
+.tab-content.reviews .send-review button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 30px;
+    margin-right: 5px;
+    border-radius: 30px;
+    background-color: #141718;
+    color: whitesmoke;
+}
+.comments{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+}
+.comments .heading{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.comments .heading strong{
+    font-size: larger;
+}
+.comments .heading select{
+    width: fit-content;
+    min-width: 150px;
+    padding: 10px;
+    padding-right: 20px;
+    height: fit-content;
+    border-radius: 10px;
+    border: 1px solid #c9ccce;
+    outline: none;
+}
+.comments .heading select option{
+    width: 100%;
+    text-transform: capitalize;
+}
+.comments main{
+    width: 100%;
+    height: fit-content;
+}
+.comments main .perComment{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c9ccce;
+}
+.comments main .perComment .dp{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.comments main .perComment .dp .name-rate{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+}
+.comments main .perComment .dp .name-rate b{
+    font-size: large;
+}
+.comments main .perComment .dp img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.comments main .perComment .content{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.comments main .perComment .content .comment{
+    width: 91%;
+    height: fit-content;
+    align-self: flex-end;
+}
+.comments main .perComment .content .actions{
+    width: 91%;
+    height: fit-content;
+    padding: 10px 0;
+    align-self: flex-end;
+
+
+}
+.comments main .perComment .content .actions i{
+    font-size: small;
+    font-weight: bolder;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+
+}
+.comments main .perComment .content .actions i:first-child{
+    /* margin-left: 10%; */
+}
+.comments button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 30px;
+    margin: auto;
+    font-size: large;
+    border: 2px solid #c9ccce;
+    display: block;
+    border-radius: 30px;
+    font-weight: bolder;
+}
+
 
 
 
@@ -1040,8 +1237,33 @@
 @media screen and (max-width: 1000px) {
 
 }
-@media screen and (max-width: 900px) {
-
+@media screen and (max-width: 970px) {
+    .tab-content.reviews .send-review{
+        width: 99%;
+        border-radius: 10px;
+        margin: auto;
+        height: fit-content;
+        padding: 10px 0;
+        border: 2px solid #c9ccce;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .tab-content.reviews .send-review input{
+        width: 55%;
+        height: fit-content;
+        padding: 10px;
+        font-size: 15px;
+    }
+    .tab-content.reviews .send-review button{
+        width: fit-content;
+        height: fit-content;
+        padding: 10px 30px;
+        margin-right: 5px;
+        border-radius: 30px;
+        background-color: #141718;
+        color: whitesmoke;
+    }
 }
 @media screen and (max-width: 860px) {
     footer {
@@ -2387,6 +2609,216 @@
     margin-left: 10px;
 }
 
+
+
+
+
+.tabs{
+    width: 85%;
+    height: fit-content;
+    margin: auto;
+}
+.tabs .tabsmenu{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    list-style-type: none;
+    margin-left: 0;
+    padding: 0;
+    padding-left: 2px;
+    border-bottom: 2px solid #c9ccce;
+}
+.tabs .tabsmenu li{
+    width: fit-content;
+    position: relative;
+    font-weight: bolder;
+    color: #676b6d;
+    cursor: pointer;
+}
+.tabs .tabsmenu li:hover{
+    color: #343839;
+    transition-duration: 1s;
+}
+.tabs .tabsmenu li.pres_tab{
+    font-weight: bolder;
+    color: #343839;
+}
+.tabs .tabsmenu li.pres_tab::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-bottom: 2px solid #343839;
+    bottom: -7px;
+    font-weight: bolder;
+
+}
+.tabs .tabsmenu li:not(:first-child){
+    margin: 5px;
+    margin-left: 10%;
+}
+.tab-content{
+    width: 100%;
+    height: fit-content;
+}
+.tab-content.reviews h1{
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+.tab-content.reviews .product-name-rev{
+    margin: 10px;
+    margin-left: 15%;
+    display: block;
+}
+.tab-content.reviews .send-review{
+    width: 99%;
+    border-radius: 10px;
+    margin: auto;
+    height: fit-content;
+    padding: 10px 0;
+    border: 2px solid #c9ccce;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.tab-content.reviews .send-review input{
+    width: 50%;
+    height: fit-content;
+    padding: 10px;
+    font-size: 15px;
+}
+.tab-content.reviews .send-review button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 30px;
+    margin-right: 5px;
+    border-radius: 30px;
+    background-color: #141718;
+    color: whitesmoke;
+    font-size: 3dvw;
+}
+.comments{
+    width: 100%;
+    height: fit-content;
+    margin-bottom: 30px;
+}
+.comments .heading{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+.comments .heading strong{
+    font-size: larger;
+}
+.comments .heading select{
+    width: fit-content;
+    min-width: 150px;
+    padding: 10px;
+    padding-right: 20px;
+    height: fit-content;
+    border-radius: 10px;
+    border: 1px solid #c9ccce;
+    outline: none;
+}
+.comments .heading select option{
+    width: 100%;
+    text-transform: capitalize;
+}
+.comments main{
+    width: 100%;
+    height: fit-content;
+}
+.comments main .perComment{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #c9ccce;
+}
+.comments main .perComment .dp{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.comments main .perComment .dp .name-rate{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    margin-left: 20px;
+    flex-direction: column;
+}
+.comments main .perComment .dp .name-rate b{
+    font-size: large;
+}
+.comments main .perComment .dp img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.comments main .perComment .content{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.comments main .perComment .content .comment{
+    width: 91%;
+    height: fit-content;
+    align-self: flex-end;
+}
+.comments main .perComment .content .actions{
+    width: 91%;
+    height: fit-content;
+    padding: 10px 0;
+    align-self: flex-end;
+
+
+}
+.comments main .perComment .content .actions i{
+    font-size: small;
+    font-weight: bolder;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    cursor: pointer;
+
+}
+.comments main .perComment .content .actions i:first-child{
+    /* margin-left: 10%; */
+}
+.comments button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 30px;
+    margin: auto;
+    font-size: large;
+    border: 2px solid #c9ccce;
+    display: block;
+    border-radius: 30px;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
     .newsletter {
         width: 100%;
         margin: 0;
@@ -2465,7 +2897,55 @@
     }
 }
 @media screen and (max-width: 400px) {
-    
+    .tab-content.reviews .send-review{
+        width: 99%;
+        border-radius: 10px;
+        margin: auto;
+        height: fit-content;
+        padding: 10px 0;
+        border: 2px solid #c9ccce;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .tab-content.reviews .send-review input{
+        width: 90%;
+        height: fit-content;
+        padding: 10px;
+        font-size: 15px;
+    }
+    .tab-content.reviews .send-review button{
+        width: 90%;
+        height: fit-content;
+        padding: 10px 0;
+        margin-right: 0;
+        margin-top: 10px;
+        border-radius: 30px;
+        background-color: #141718;
+        color: whitesmoke;
+        font-size: 7dvw;
+    }
+    .comments .heading{
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-content: center;
+        margin: 20px 0;
+    }
+    .comments .heading select{
+        width: 90%;
+        min-width: 90%;
+        padding: 10px;
+        padding-right: 20px;
+        height: fit-content;
+        border-radius: 10px;
+        border: 1px solid #c9ccce;
+        outline: none;
+        margin-top: 20px;
+    }
 }
 
 @media screen and (max-width: 300px) {
@@ -2814,7 +3294,7 @@
     width: fit-content;
     height: fit-content;
     padding: 2px;
-    padding-left: 5px;
+    padding-left: 0;
     margin: 0;
     margin-top: 10px;
     display: flex;
@@ -2827,3 +3307,9 @@
     font-weight: bolder;
     color: #676b6d;
 }
+
+
+
+
+
+
