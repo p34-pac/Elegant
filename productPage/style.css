@@ -76,7 +76,7 @@
         background-color: white;
         left: 0;
         top: 0;
-        z-index: 1;
+        z-index: 10;
         margin: 0;
         display: none !important;
    }
@@ -257,7 +257,7 @@
     background-color: whitesmoke;
     right: 0;
     top: 0;
-    z-index: 1;
+    z-index: 10;
     margin: 0;
     display: block;
     animation: draw-menu-right 250ms linear forwards;
@@ -1190,7 +1190,7 @@
         background-color: white;
         left: 0;
         top: 0;
-        z-index: 1;
+        z-index: 10;
         margin: 0;
         display: block !important;
         animation: draw-menu 250ms linear forwards;
@@ -1630,7 +1630,7 @@
         background-color: white;
         left: 0;
         top: 0;
-        z-index: 1;
+        z-index: 10;
         margin: 0;
         display: block !important;
         animation: draw-menu 250ms linear forwards;
@@ -1646,7 +1646,7 @@
     background-color: whitesmoke;
     right: 0;
     top: 0;
-    z-index: 1;
+    z-index: 10;
     margin: 0;
     display: block;
     animation: draw-menu-right 250ms linear forwards;
@@ -2476,7 +2476,7 @@
         background-color: white;
         left: 0;
         top: 0;
-        z-index: 1;
+        z-index: 10;
         margin: 0;
         display: block !important;
         animation: draw-menu 250ms linear forwards;
