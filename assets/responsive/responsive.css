@@ -23,6 +23,17 @@ hr{
 section, article,div, main{
     overflow: hidden;
 }
+button{
+    outline: none;
+    border: none;
+    background-color: #00000000;
+    cursor: pointer;
+}
+input{
+    outline: none;
+    border: none;
+    background-color: #00000000;
+}
 .btn-no-bg-arr-undl{
     width: fit-content;
     height: fit-content;
