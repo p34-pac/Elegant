@@ -1,0 +1,38 @@
+{
+  "name": "elegant",
+  "version": "1.0.0",
+  "description": "E commerce site",
+  "main": "a store",
+  "scripts": {
+    "start": "npm install && gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p34-pac/Elegant.git"
+  },
+  "keywords": [
+    "elegant",
+    "store",
+    "buy",
+    "sell",
+    "market",
+    "product",
+    "furniture"
+  ],
+  "author": "Paul Peter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p34-pac/Elegant/issues"
+  },
+  "homepage": "https://p34-pac.github.io/Elegant/Homepage/Homepage1",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.69.6"
+  }
+}

@@ -1,0 +1,204 @@
+@media screen and (max-width:500px) {
+    .hero{
+        width: 85%;
+        height: 80vh;
+        margin: auto;
+        margin-bottom: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero .hero-content{
+        width: 90%;
+        height: 90%;
+        z-index: 1;
+        margin: auto;
+        position: absolute;
+        left: 5%;
+        top: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .hero .hero-content h1{
+        font-size: 30px;
+        margin: 10px 0;
+        color: #000;
+        text-align: center;
+    }
+    .hero .hero-content p{
+        font-size: large;
+        text-align: center;
+    }
+    
+    .breadcrumbs{
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+    }
+    .breadcrumbs>.locn{
+        width: fit-content;
+        height: fit-content;
+        font-size: 3dvw;
+        color: #6c7275;
+        font-weight: bolder;
+        cursor: pointer;
+    
+    }
+    .breadcrumbs>.locn>svg{
+        margin: 0 5px;
+    }
+    .breadcrumbs>.locn:not(:first-child){
+        margin: 5px;
+    }
+    
+    .breadcrumbs>.locn:last-child{
+        color: #000;
+    }
+    .breadcrumbs>.locn:last-child > svg{
+        display: none;
+    }
+    .product-info-crumbs{
+        padding-left: 0;
+    }    
+    
+}
+@media screen and (max-width:300px) {
+    .hero{
+        width: 85%;
+        height: 80vh;
+        margin: auto;
+        margin-bottom: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero .hero-content{
+        width: 90%;
+        height: 90%;
+        z-index: 1;
+        margin: auto;
+        position: absolute;
+        left: 5%;
+        top: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .hero .hero-content h1{
+        font-size: 25px;
+        margin: 10px 0;
+        color: #000;
+        text-align: center;
+    }
+    .hero .hero-content p{
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    .breadcrumbs{
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+    }
+    .breadcrumbs>.locn{
+        width: fit-content;
+        height: fit-content;
+        font-size: 5dvw;
+        color: #6c7275;
+        font-weight: bolder;
+        cursor: pointer;
+    
+    }
+    .breadcrumbs>.locn>svg{
+        margin: 0 5px;
+    }
+    .breadcrumbs>.locn:not(:first-child){
+        margin: 5px;
+    }
+    
+    .breadcrumbs>.locn:last-child{
+        color: #000;
+    }
+    .breadcrumbs>.locn:last-child > svg{
+        display: none;
+    }
+    .product-info-crumbs{
+        padding-left: 0;
+    }    
+    
+}
+@media screen and (min-width:500px) {
+    .hero{
+        width: 85%;
+        height: 80vh;
+        margin: auto;
+        margin-bottom: 30px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hero .hero-content{
+        width: 60%;
+        height: 60%;
+        z-index: 1;
+        margin: auto;
+        position: absolute;
+        left: 20%;
+        top: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .hero .hero-content h1{
+        font-size: 50px;
+        margin: 10px 0;
+        color: #000;
+        text-align: center;
+    }
+    .hero .hero-content p{
+        font-size: large;
+        text-align: center;
+    }
+    
+    .breadcrumbs{
+        width: fit-content;
+        height: fit-content;
+        padding: 10px;
+    }
+    .breadcrumbs>.locn{
+        width: fit-content;
+        height: fit-content;
+        font-size: 15px;
+        color: #6c7275;
+        font-weight: bolder;
+        cursor: pointer;
+    
+    }
+    .breadcrumbs>.locn>svg{
+        margin: 0 5px;
+    }
+    .breadcrumbs>.locn:not(:first-child){
+        margin: 5px;
+    }
+    
+    .breadcrumbs>.locn:last-child{
+        color: #000;
+    }
+    .breadcrumbs>.locn:last-child > svg{
+        display: none;
+    }
+    .product-info-crumbs{
+        padding-left: 0;
+    }    
+    
+}
