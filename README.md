@@ -2,7 +2,7 @@
 
 E commerce site
 
-[Go to homepage](Homepage/Homepage1)
-[Go to Product](productPage/)
+[Go to homepage](Home)
+[Go to Product](product/)
 [Go to shop](shop/)
 

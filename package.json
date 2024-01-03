@@ -2,7 +2,7 @@
   "name": "elegant",
   "version": "1.0.0",
   "description": "E commerce site",
-  "main": "a store",
+  "main": "./gulpfile.js",
   "scripts": {
     "start": "npm install && gulp"
   },

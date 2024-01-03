@@ -21,7 +21,6 @@ function close(closeBtn){
 }
 function open(menuBtn){
     let menu = menuBtn.getAttribute('data-toggle')
-
     if(document.querySelector(`.${menu}`).classList.contains("closed")){
         document.querySelector(`.${menu}`).classList.remove('closed')
         document.body.style.overflow = "hidden"
