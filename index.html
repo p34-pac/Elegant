@@ -6,6 +6,7 @@
     <title>HomePage1</title>
     <link rel="stylesheet" type="text/css" href="./assets/responsive/responsive.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="./assets/responsive/carousel.css">
 </head>
 <body>
     <header class="notification-bar">
@@ -234,22 +235,7 @@
     </nav>
     <section class="slider-section">
         <div class="slider">
-            <div class="slider-navigation">
-                <i class="left">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.66669 16H25.3334" stroke="#6C7275" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M6.66669 16L14.6667 24" stroke="#6C7275" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M6.66669 16L14.6667 8" stroke="#6C7275" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>                        
-                </i>
-                <i class="right">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6.66666 16H25.3333" stroke="#141718" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M17.3333 24L25.3333 16" stroke="#141718" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M17.3333 8L25.3333 16" stroke="#141718" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>                        
-                </i>
-            </div>
+            <!-- 
             <ul class="slider-navigation-dots">
                 <li class="dot pres"></li>
                 <li class="dot"></li>
@@ -257,7 +243,29 @@
             </ul>
             <div class="image-placeholder">
                 <img src="./assets/images/Paste image.png" alt="">
-            </div>
+            </div> -->
+            <div class="image-slider">
+                <div class="contentBox"  itemid="4">
+                    
+                </div>
+                <div class="itemLoc">
+                </div>
+                <div class="slider-navigation">
+                    <i class="left" id="prev">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.66669 16H25.3334" stroke="#6C7275" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.66669 16L14.6667 24" stroke="#6C7275" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.66669 16L14.6667 8" stroke="#6C7275" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                        
+                    </i>
+                    <i class="right" id="next">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.66666 16H25.3333" stroke="#141718" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17.3333 24L25.3333 16" stroke="#141718" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17.3333 8L25.3333 16" stroke="#141718" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                        
+                    </i>
+                </div>
         </div>
         <ul class="header">
             <li class="largetext">
@@ -1421,5 +1429,6 @@
         </section>
     </footer>
     <script src="./assets/js/mob-men-toggle.js"></script>
+    <script type="module" src="./assets/js/carousel.js"></script>
 </body>
 </html>

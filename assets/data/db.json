@@ -1,0 +1,23 @@
+[
+    {
+        "src": "./assets/images/Paste image.png",
+        "desc": "Furniture",
+        "id": 0
+    },
+    {
+        "src": "./assets/images/Paste image.png",
+        "desc": "Furniture2",
+        "id": 1
+    },
+    {
+        "src": "./assets/images/bagkini.png",
+        "desc": "bagkini",
+        "id": 2
+    },
+    {
+        "src": "./assets/images/baseglove.png",
+        "desc": "baseglove",
+        "id": 3
+    }
+    
+]
