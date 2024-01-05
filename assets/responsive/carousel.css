@@ -55,7 +55,7 @@
     object-fit: cover;
     width: 100%;
     border-radius: 5px;
-    animation: remove 1s linear forwards;
+    animation: remove 2s linear forwards;
 }
 .image-slider .contentBox .showPrev{
     object-fit: cover;
