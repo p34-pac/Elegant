@@ -48,5 +48,69 @@ document.body.addEventListener('click', (e)=>{
         target = e.target.parentElement
         open(target)
     }
+    let tempEle = ''
+    let child = ''
+    if(e.target.hasAttribute('data-toggle')){
+        tempEle = e.target
+        child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-toggle'))
+
+        tempEle.parentElement.classList.toggle('dropped')
+        child.classList.toggle('closed')
+    }else if(e.target.parentElement.hasAttribute('data-toggle')){
+        tempEle = e.target.parentElement
+        child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-toggle'))
+
+        tempEle.parentElement.classList.toggle('dropped')
+        child.classList.toggle('closed')
+    }else if(e.target.parentElement.parentElement.hasAttribute('data-toggle')){
+        tempEle = e.target.parentElement.parentElement
+        child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-toggle'))
+
+        tempEle.parentElement.classList.toggle('dropped')
+        child.classList.toggle('closed')
+    }
+
+    if(e.target.hasAttribute('data-value')){
+        tempEle = e.target
+        for (const key in tempEle.parentElement.children) {
+            if (Object.hasOwnProperty.call(tempEle.parentElement.children, key)) {
+                const theLiz = tempEle.parentElement.children[key];
+                if(theLiz.hasAttribute("aria-selected")){
+                    theLiz.removeAttribute("aria-selected")
+                }
+            }
+        }
+
+        tempEle.setAttribute("aria-selected", "true")
+
+        let valueHolder = findChild(e.target.parentElement.parentElement.parentElement.children, 'text')
+        
+        valueHolder.innerText = ''
+        let spl = tempEle.getAttribute('data-value').split('-').forEach(str => {
+            valueHolder.innerText += " " + str
+        });
+
+    }
 
 })
+
+function findChild(fromObject, childClass) {
+    for (const key in fromObject) {
+        if (Object.hasOwnProperty.call(fromObject, key)) {
+            const child = fromObject[key];
+
+            if (child.classList.contains(childClass)) {
+                return child;
+            } else {
+                // Add a return statement for the recursive call
+                const foundChild = findChild(child.children, childClass);
+                if (foundChild) {
+                    return foundChild;
+                }
+            }
+              
+        }
+    }
+    
+}
+

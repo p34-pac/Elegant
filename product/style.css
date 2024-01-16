@@ -932,20 +932,16 @@
 .comments .heading strong{
     font-size: larger;
 }
-.comments .heading select{
+.comments .heading #sort_comments{
     width: fit-content;
     min-width: 150px;
     padding: 10px;
     padding-right: 20px;
     height: fit-content;
-    border-radius: 10px;
-    border: 1px solid #c9ccce;
-    outline: none;
+    
+
 }
-.comments .heading select option{
-    width: 100%;
-    text-transform: capitalize;
-}
+
 .comments main{
     width: 100%;
     height: fit-content;
@@ -2715,20 +2711,14 @@
 .comments .heading strong{
     font-size: larger;
 }
-.comments .heading select{
+.comments .heading #sort_comments{
     width: fit-content;
     min-width: 150px;
     padding: 10px;
     padding-right: 20px;
     height: fit-content;
-    border-radius: 10px;
-    border: 1px solid #c9ccce;
-    outline: none;
 }
-.comments .heading select option{
-    width: 100%;
-    text-transform: capitalize;
-}
+
 .comments main{
     width: 100%;
     height: fit-content;
@@ -2935,15 +2925,12 @@
         justify-content: center;
         margin: 20px 0;
     }
-    .comments .heading select{
+    .comments .heading #sort_comments{
         width: 90%;
         min-width: 90%;
         padding: 10px;
         padding-right: 20px;
         height: fit-content;
-        border-radius: 10px;
-        border: 1px solid #c9ccce;
-        outline: none;
         margin-top: 20px;
     }
 }

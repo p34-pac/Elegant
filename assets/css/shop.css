@@ -202,3 +202,31 @@
     }    
     
 }
+.toolbar{
+    width: 85%;
+    height: fit-content;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.toolbar .filters{
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.toolbar .filters >li{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+}
+.toolbar .filters >li:not(:first-child){
+    margin-left: 10px;
+}
+.filter_category{
+    width: 200px;
+}
+
