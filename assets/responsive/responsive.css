@@ -2136,8 +2136,7 @@ input[type=search]{
 /* dropdown menu */
 
 .dropMenu{
-    width: 100%;
-    max-width: 300px;
+    width: 98%;
     height: fit-content;
     list-style-type: none;
     padding: 0;
@@ -2146,7 +2145,7 @@ input[type=search]{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 5px;
+    position: relative;
 
 }
 .dropMenu .selected{
@@ -2161,9 +2160,16 @@ input[type=search]{
     justify-content: space-between;
     cursor: pointer;
 }
+.n-br{
+    border: none !important;
+    padding: 0;
+}
 .dropMenu .selected > b{
     margin-left: 10px;
     text-transform: capitalize;
+    margin-right: 10px;
+    font-weight: bolder;
+    color: #6c7275;
 }
 .dropMenu .selected > i{
     margin-right: 10px;
@@ -2206,4 +2212,6 @@ input[type=search]{
 .dropMenu .dropList > ul li[aria-selected="true"]{
     cursor: pointer;
     background-color: #9a9a9a;
+    font-weight: bolder;
+    color: #535353;
 }

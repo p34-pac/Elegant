@@ -92,7 +92,49 @@ document.body.addEventListener('click', (e)=>{
 
     }
 
+    if(e.target.hasAttribute("class") && e.target.classList.contains('selectSelf')){
+        tempEle = e.target
+
+        if(tempEle.hasAttribute('data-self-select')){
+            tempEle.removeAttribute('data-self-select')
+        }else{
+            removeAttributeFromChildren(tempEle.parentElement.children, 'data-self-select')
+            tempEle.setAttribute('data-self-select', "true")
+        }
+    }else if(e.target.parentElement.hasAttribute("class") && e.target.parentElement.classList.contains('selectSelf')){
+        tempEle = e.target.parentElement
+
+
+        if(tempEle.hasAttribute('data-self-select')){
+            tempEle.removeAttribute('data-self-select')
+        }else{
+            removeAttributeFromChildren(tempEle.parentElement.children, 'data-self-select')
+            tempEle.setAttribute('data-self-select', "true")
+        }
+
+    }else if(e.target.parentElement.parentElement.hasAttribute("class") && e.target.parentElement.parentElement.classList.contains('selectSelf')){
+        tempEle = e.target.parentElement.parentElement
+
+
+        if(tempEle.hasAttribute('data-self-select')){
+            tempEle.removeAttribute('data-self-select')
+        }else{
+            removeAttributeFromChildren(tempEle.parentElement.children, 'data-self-select')
+            tempEle.setAttribute('data-self-select', "true")
+        }
+    }
+
 })
+function removeAttributeFromChildren(objLst, attrName) {
+    for (const key in objLst) {
+        if (Object.hasOwnProperty.call(objLst, key)) {
+            const children = objLst[key];
+            if(children.hasAttribute(attrName)){
+                children.removeAttribute(attrName)
+            }
+        }
+    }
+}
 
 function findChild(fromObject, childClass) {
     for (const key in fromObject) {
