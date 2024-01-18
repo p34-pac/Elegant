@@ -730,7 +730,7 @@
     height: 50px;
     border: 1px solid #78797a;
 }
-.swatches .color .choosen-color > .color-images >.img-box[aria-selected=true]{
+.swatches .color .choosen-color > .color-images >.img-box[data-self-select=true]{
     width: 50px;
     height: 50px;
     border: 1px solid black;
@@ -936,10 +936,9 @@
     width: fit-content;
     min-width: 150px;
     padding: 10px;
-    padding-right: 20px;
     height: fit-content;
-    
-
+    position: absolute;
+    right: 7%;
 }
 
 .comments main{
@@ -2510,7 +2509,7 @@
     height: 50px;
     border: 1px solid #78797a;
 }
-.swatches .color .choosen-color > .color-images >.img-box[aria-selected=true]{
+.swatches .color .choosen-color > .color-images >.img-box[data-self-select=true]{
     width: 50px;
     height: 50px;
     border: 1px solid black;
@@ -2717,11 +2716,15 @@
     padding: 10px;
     padding-right: 20px;
     height: fit-content;
+    position: absolute;
+    right: 7%;
+    
 }
 
 .comments main{
     width: 100%;
     height: fit-content;
+    margin-top: 50px;
 }
 .comments main .perComment{
     width: 100%;
@@ -2926,12 +2929,17 @@
         margin: 20px 0;
     }
     .comments .heading #sort_comments{
-        width: 90%;
+        width: 95%;
         min-width: 90%;
         padding: 10px;
         padding-right: 20px;
         height: fit-content;
-        margin-top: 20px;
+        margin-top: 0px;
+        position: relative;
+        right: 0;
+    }
+    .comments main{
+        margin-top: 0;
     }
 }
 
