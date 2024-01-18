@@ -49,6 +49,7 @@ document.body.addEventListener('click', (e)=>{
         open(target)
     }
     let tempEle = ''
+    let funcEle = ''
     let child = ''
     if(e.target.hasAttribute('data-toggle')){
         tempEle = e.target
@@ -124,7 +125,55 @@ document.body.addEventListener('click', (e)=>{
         }
     }
 
+    // get items with data-change as an attribute, parent's or grand's
+    if(e.target.hasAttribute('data-change')){
+        tempEle = e.target
+        if(e.target.hasAttribute('data-function')){
+            funcEle = e.target
+            findChange(tempEle, funcEle)
+        }
+    }else if(e.target.parentElement.hasAttribute('data-change')){
+        tempEle = e.target.parentElement
+        if(e.target.hasAttribute('data-function')){
+            funcEle = e.target
+            findChange(tempEle, funcEle)
+        }
+
+
+    }else if(e.target.parentElement.parentElement.hasAttribute('data-change')){
+        tempEle = e.target.parentElement.parentElement
+        if(e.target.hasAttribute('data-function')){
+            funcEle = e.target
+            findChange(tempEle, funcEle)
+        }
+
+
+    }
+    
+
 })
+function findChange(changefor, subFCN) {
+    switch(changefor.getAttribute('data-change')){
+        case 'trend':
+            var output = findChild(changefor.children, 'out')
+            if(subFCN.getAttribute('data-function') == 'increment'){
+                output.setAttribute('data-value-self', Number(output.getAttribute('data-value-self')) + Number(1))
+                output.innerText = output.getAttribute('data-value-self')
+            }else if(subFCN.getAttribute('data-function') == 'decrement'){
+                if(output.getAttribute('data-value-self') == 0){
+                    output.setAttribute('data-value-self', 0)
+                }else{
+                    output.setAttribute('data-value-self', Number(output.getAttribute('data-value-self')) - Number(1))
+                    
+                }
+                output.innerText = output.getAttribute('data-value-self')
+            }
+            break
+        default:
+            console.log(0);
+            break
+    }
+}
 function removeAttributeFromChildren(objLst, attrName) {
     for (const key in objLst) {
         if (Object.hasOwnProperty.call(objLst, key)) {
@@ -155,4 +204,5 @@ function findChild(fromObject, childClass) {
     }
     
 }
+
 
