@@ -1,5 +1,3 @@
-
-
 // menuBtn.addEventListener('click', (e)=>{
 //     let menu = menuBtn.getAttribute('data-toggle')
 //     if(document.querySelector(`.${menu}`).classList.contains("closed")){
@@ -11,39 +9,40 @@
 
 
 
-function close(closeBtn){
+function close(closeBtn) {
     let close = closeBtn.getAttribute('data-toggle')
-    if(!document.querySelector(`.${close}`).classList.contains("closed")){
+    if (!document.querySelector(`.${close}`).classList.contains("closed")) {
         document.querySelector(`.${close}`).classList.add('closed')
         document.body.style.overflow = "auto"
     }
 }
-function open(menuBtn){
+
+function open(menuBtn) {
     let menu = menuBtn.getAttribute('data-toggle')
-    if(document.querySelector(`.${menu}`).classList.contains("closed")){
+    if (document.querySelector(`.${menu}`).classList.contains("closed")) {
         document.querySelector(`.${menu}`).classList.remove('closed')
         document.body.style.overflow = "hidden"
     }
 }
 
-document.body.addEventListener('click', (e)=>{
+document.body.addEventListener('click', (e) => {
     let target = null
-    if(e.target.classList.contains("cover-rest")){
+    if (e.target.classList.contains("cover-rest")) {
         target = e.target
         close(target)
 
     }
-    if(e.target.classList.contains('close')){
+    if (e.target.classList.contains('close')) {
         target = e.target
         close(target)
 
-    }else if( e.target.parentElement.classList.contains('close')){
+    } else if (e.target.parentElement.classList.contains('close')) {
         target = e.target.parentElement
         close(target)
-    }else if(e.target.classList.contains('open')){
+    } else if (e.target.classList.contains('open')) {
         target = e.target
         open(target)
-    }else if( e.target.parentElement.classList.contains('open')){
+    } else if (e.target.parentElement.classList.contains('open')) {
         target = e.target.parentElement
         open(target)
     }
@@ -53,19 +52,19 @@ document.body.addEventListener('click', (e)=>{
     let prev = ''
 
     // drop menu
-    if(e.target.hasAttribute('data-dropMenu')){
+    if (e.target.hasAttribute('data-dropMenu')) {
         tempEle = e.target
         child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-dropMenu'))
-        
+
         tempEle.parentElement.classList.toggle('dropped')
         child.classList.toggle('closed')
-    }else if(e.target.parentElement.hasAttribute('data-dropMenu')){
+    } else if (e.target.parentElement.hasAttribute('data-dropMenu')) {
         tempEle = e.target.parentElement
         child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-dropMenu'))
 
         tempEle.parentElement.classList.toggle('dropped')
         child.classList.toggle('closed')
-    }else if(e.target.parentElement.parentElement.hasAttribute('data-dropMenu')){
+    } else if (e.target.parentElement.parentElement.hasAttribute('data-dropMenu')) {
         tempEle = e.target.parentElement.parentElement
         child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-dropMenu'))
 
@@ -75,12 +74,12 @@ document.body.addEventListener('click', (e)=>{
 
     // change value +/-
 
-    if(e.target.hasAttribute('data-value')){
+    if (e.target.hasAttribute('data-value')) {
         tempEle = e.target
         for (const key in tempEle.parentElement.children) {
             if (Object.hasOwnProperty.call(tempEle.parentElement.children, key)) {
                 const theLiz = tempEle.parentElement.children[key];
-                if(theLiz.hasAttribute("aria-selected")){
+                if (theLiz.hasAttribute("aria-selected")) {
                     theLiz.removeAttribute("aria-selected")
                 }
             }
@@ -91,7 +90,7 @@ document.body.addEventListener('click', (e)=>{
         prev = findChild(tempEle.parentElement.parentElement.parentElement.children, 'dropList')
         prev.classList.add('closed')
         let valueHolder = findChild(e.target.parentElement.parentElement.parentElement.children, 'text')
-        
+
         valueHolder.innerText = ''
         let spl = tempEle.getAttribute('data-value').split('-').forEach(str => {
             valueHolder.innerText += " " + str
@@ -99,79 +98,80 @@ document.body.addEventListener('click', (e)=>{
 
     }
 
-    if(e.target.hasAttribute("class") && e.target.classList.contains('selectSelf')){
+    if (e.target.hasAttribute("class") && e.target.classList.contains('selectSelf')) {
         tempEle = e.target
 
-        if(tempEle.hasAttribute('data-self-select')){
+        if (tempEle.hasAttribute('data-self-select')) {
             tempEle.removeAttribute('data-self-select')
-        }else{
+        } else {
             removeAttributeFromChildren(tempEle.parentElement.children, 'data-self-select')
             tempEle.setAttribute('data-self-select', "true")
-            
+
         }
-    }else if(e.target.parentElement.hasAttribute("class") && e.target.parentElement.classList.contains('selectSelf')){
+    } else if (e.target.parentElement.hasAttribute("class") && e.target.parentElement.classList.contains('selectSelf')) {
         tempEle = e.target.parentElement
 
 
-        if(tempEle.hasAttribute('data-self-select')){
+        if (tempEle.hasAttribute('data-self-select')) {
             tempEle.removeAttribute('data-self-select')
-        }else{
+        } else {
             removeAttributeFromChildren(tempEle.parentElement.children, 'data-self-select')
             tempEle.setAttribute('data-self-select', "true")
         }
 
-    }else if(e.target.parentElement.parentElement.hasAttribute("class") && e.target.parentElement.parentElement.classList.contains('selectSelf')){
+    } else if (e.target.parentElement.parentElement.hasAttribute("class") && e.target.parentElement.parentElement.classList.contains('selectSelf')) {
         tempEle = e.target.parentElement.parentElement
 
 
-        if(tempEle.hasAttribute('data-self-select')){
+        if (tempEle.hasAttribute('data-self-select')) {
             tempEle.removeAttribute('data-self-select')
-        }else{
+        } else {
             removeAttributeFromChildren(tempEle.parentElement.children, 'data-self-select')
             tempEle.setAttribute('data-self-select', "true")
         }
     }
 
     // get items with data-change as an attribute, parent's or grand's
-    if(e.target.hasAttribute('data-change')){
+    if (e.target.hasAttribute('data-change')) {
         tempEle = e.target
-        if(e.target.hasAttribute('data-function')){
+        if (e.target.hasAttribute('data-function')) {
             funcEle = e.target
             findChange(tempEle, funcEle)
         }
-    }else if(e.target.parentElement.hasAttribute('data-change')){
+    } else if (e.target.parentElement.hasAttribute('data-change')) {
         tempEle = e.target.parentElement
-        if(e.target.hasAttribute('data-function')){
+        if (e.target.hasAttribute('data-function')) {
             funcEle = e.target
             findChange(tempEle, funcEle)
         }
 
 
-    }else if(e.target.parentElement.parentElement.hasAttribute('data-change')){
+    } else if (e.target.parentElement.parentElement.hasAttribute('data-change')) {
         tempEle = e.target.parentElement.parentElement
-        if(e.target.hasAttribute('data-function')){
+        if (e.target.hasAttribute('data-function')) {
             funcEle = e.target
             findChange(tempEle, funcEle)
         }
 
 
     }
-    
+
 
 })
+
 function findChange(changefor, subFCN) {
-    switch(changefor.getAttribute('data-change')){
+    switch (changefor.getAttribute('data-change')) {
         case 'trend':
             var output = findChild(changefor.children, 'out')
-            if(subFCN.getAttribute('data-function') == 'increment'){
+            if (subFCN.getAttribute('data-function') == 'increment') {
                 output.setAttribute('data-value-self', Number(output.getAttribute('data-value-self')) + Number(1))
                 output.innerText = output.getAttribute('data-value-self')
-            }else if(subFCN.getAttribute('data-function') == 'decrement'){
-                if(output.getAttribute('data-value-self') == 0){
+            } else if (subFCN.getAttribute('data-function') == 'decrement') {
+                if (output.getAttribute('data-value-self') == 0) {
                     output.setAttribute('data-value-self', 0)
-                }else{
+                } else {
                     output.setAttribute('data-value-self', Number(output.getAttribute('data-value-self')) - Number(1))
-                    
+
                 }
                 output.innerText = output.getAttribute('data-value-self')
             }
@@ -181,11 +181,12 @@ function findChange(changefor, subFCN) {
             break
     }
 }
+
 function removeAttributeFromChildren(objLst, attrName) {
     for (const key in objLst) {
         if (Object.hasOwnProperty.call(objLst, key)) {
             const children = objLst[key];
-            if(children.hasAttribute(attrName)){
+            if (children.hasAttribute(attrName)) {
                 children.removeAttribute(attrName)
             }
         }
@@ -206,10 +207,8 @@ function findChild(fromObject, childClass) {
                     return foundChild;
                 }
             }
-              
+
         }
     }
-    
+
 }
-
-
