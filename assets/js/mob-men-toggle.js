@@ -14,7 +14,6 @@
 function close(closeBtn){
     let close = closeBtn.getAttribute('data-toggle')
     if(!document.querySelector(`.${close}`).classList.contains("closed")){
-        console.log(document.querySelector(`.${close}`))
         document.querySelector(`.${close}`).classList.add('closed')
         document.body.style.overflow = "auto"
     }
@@ -51,25 +50,30 @@ document.body.addEventListener('click', (e)=>{
     let tempEle = ''
     let funcEle = ''
     let child = ''
-    if(e.target.hasAttribute('data-toggle')){
+    let prev = ''
+
+    // drop menu
+    if(e.target.hasAttribute('data-dropMenu')){
         tempEle = e.target
-        child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-toggle'))
-
+        child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-dropMenu'))
+        
         tempEle.parentElement.classList.toggle('dropped')
         child.classList.toggle('closed')
-    }else if(e.target.parentElement.hasAttribute('data-toggle')){
+    }else if(e.target.parentElement.hasAttribute('data-dropMenu')){
         tempEle = e.target.parentElement
-        child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-toggle'))
+        child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-dropMenu'))
 
         tempEle.parentElement.classList.toggle('dropped')
         child.classList.toggle('closed')
-    }else if(e.target.parentElement.parentElement.hasAttribute('data-toggle')){
+    }else if(e.target.parentElement.parentElement.hasAttribute('data-dropMenu')){
         tempEle = e.target.parentElement.parentElement
-        child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-toggle'))
+        child = findChild(tempEle.parentElement.children, tempEle.getAttribute('data-dropMenu'))
 
         tempEle.parentElement.classList.toggle('dropped')
         child.classList.toggle('closed')
     }
+
+    // change value +/-
 
     if(e.target.hasAttribute('data-value')){
         tempEle = e.target
@@ -83,7 +87,9 @@ document.body.addEventListener('click', (e)=>{
         }
 
         tempEle.setAttribute("aria-selected", "true")
-
+        // console.log(tempEle.parentElement.parentElement.parentElement.classList.toggle('dropped'))
+        prev = findChild(tempEle.parentElement.parentElement.parentElement.children, 'dropList')
+        prev.classList.add('closed')
         let valueHolder = findChild(e.target.parentElement.parentElement.parentElement.children, 'text')
         
         valueHolder.innerText = ''
@@ -101,6 +107,7 @@ document.body.addEventListener('click', (e)=>{
         }else{
             removeAttributeFromChildren(tempEle.parentElement.children, 'data-self-select')
             tempEle.setAttribute('data-self-select', "true")
+            
         }
     }else if(e.target.parentElement.hasAttribute("class") && e.target.parentElement.classList.contains('selectSelf')){
         tempEle = e.target.parentElement
