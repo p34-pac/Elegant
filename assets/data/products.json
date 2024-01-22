@@ -1,0 +1,272 @@
+[
+    {
+      "name": "Tray Table",
+      "imageSrc": "../assets/images/tray_table.png",
+      "prevPrice": 400.00,
+      "isNew": true,
+      "discountPercentage": -50,
+      "description": "Buy one or buy a few and make every space where you sit more convenient. Light and easy to move around with removable tray top, handy for serving snacks.",
+      "rating": 4.5,
+      "reviews": 11,
+      "measurements": "17 1/2x20 5/8\"",
+      "colors": ["Black", "Red"],
+      "selectedColor": {
+        "name": "Black",
+        "imageSrc": "../assets/images/tray_table.png"
+      },
+      "sku": "1117",
+      "category": ["Living Room", "Bedroom"],
+      "offerExpiration": {
+        "days": 2,
+        "hours": 12,
+        "minutes": 45,
+        "seconds": 5
+      },
+      "quantity": 10,
+      "bestSelling": true
+    },
+    {
+      "name": "Modern Armchair",
+      "imageSrc": "../assets/images/modern_armchair.png",
+      "prevPrice": 320.00,
+      "isNew": true,
+      "discountPercentage": -20,
+      "description": "Experience comfort and style with our modern armchair. Its sleek design and plush cushions make it the perfect addition to your cozy corner.",
+      "rating": 4.2,
+      "reviews": 12,
+      "measurements": "28x30\"",
+      "colors": ["Blue", "Gray", "Beige"],
+      "selectedColor": {
+        "name": "Beige",
+        "imageSrc": "../assets/images/modern_armchair_beige.png"
+      },
+      "sku": "3344",
+      "category": ["Living Room", "Reading Nook"],
+      "offerExpiration": {
+        "days": 3,
+        "hours": 6,
+        "minutes": 45,
+        "seconds": 30
+      },
+      "quantity": 5,
+      "bestSelling": true
+
+    },
+    {
+      "name": "Rustic Dining Table",
+      "imageSrc": "../assets/images/rustic_dining_table.png",
+      "prevPrice": 750.00,
+      "isNew": false,
+      "discountPercentage": -15,
+      "description": "Gather around our rustic dining table for memorable meals. Its sturdy construction and charming details make it a centerpiece in your dining area.",
+      "rating": 4.8,
+      "reviews": 9,
+      "measurements": "40x72\"",
+      "colors": ["Walnut", "Espresso", "White"],
+      "selectedColor": {
+        "name": "Walnut",
+        "imageSrc": "../assets/images/rustic_dining_table_walnut.png"
+      },
+      "sku": "4477",
+      "category": ["Dining Room", "Kitchen"],
+      "offerExpiration": {
+        "days": 6,
+        "hours": 10,
+        "minutes": 15,
+        "seconds": 5
+      },
+      "quantity": 2,
+      "bestSelling": false
+
+    },
+    {
+      "name": "Cozy Throw Blanket",
+      "imageSrc": "../assets/images/cozy_throw_blanket.png",
+      "prevPrice": 45.00,
+      "isNew": true,
+      "discountPercentage": -10,
+      "description": "Snuggle up with our cozy throw blanket. Its soft and warm fabric is perfect for chilly evenings, adding a touch of comfort to your home.",
+      "rating": 4.6,
+      "reviews": 15,
+      "measurements": "50x60\"",
+      "colors": ["Coral", "Navy Blue", "Gray"],
+      "selectedColor": {
+        "name": "Navy Blue",
+        "imageSrc": "../assets/images/cozy_throw_blanket_navy_blue.png"
+      },
+      "sku": "5588",
+      "category": ["Living Room", "Bedroom"],
+      "offerExpiration": {
+        "days": 4,
+        "hours": 12,
+        "minutes": 30,
+        "seconds": 20
+      },
+      "quantity": 8,
+      "bestSelling": true
+
+    },
+    {
+      "name": "Minimalist Bookshelf",
+      "imageSrc": "../assets/images/minimalist_bookshelf.png",
+      "prevPrice": 280.00,
+      "isNew": false,
+      "discountPercentage": -25,
+      "description": "Organize your books and decor with our minimalist bookshelf. Its sleek design and ample storage space make it a functional and stylish choice.",
+      "rating": 4.0,
+      "reviews": 7,
+      "measurements": "32x72\"",
+      "colors": ["Black", "White", "Oak"],
+      "selectedColor": {
+        "name": "White",
+        "imageSrc": "../assets/images/minimalist_bookshelf_white.png"
+      },
+      "sku": "6699",
+      "category": ["Living Room", "Home Office"],
+      "offerExpiration": {
+        "days": 7,
+        "hours": 9,
+        "minutes": 20,
+        "seconds": 10
+      },
+      "quantity": 3,
+      "bestSelling": false
+
+    },
+    {
+      "name": "Vintage Desk Lamp",
+      "imageSrc": "../assets/images/vintage_desk_lamp.png",
+      "prevPrice": 80.00,
+      "isNew": true,
+      "discountPercentage": -18,
+      "description": "Illuminate your workspace with our vintage desk lamp. Its timeless design and adjustable features make it a perfect companion for late-night tasks.",
+      "rating": 4.3,
+      "reviews": 10,
+      "measurements": "18\" height",
+      "colors": ["Brass", "Copper", "Black"],
+      "selectedColor": {
+        "name": "Copper",
+        "imageSrc": "../assets/images/vintage_desk_lamp_copper.png"
+      },
+      "sku": "7710",
+      "category": ["Home Office", "Study"],
+      "offerExpiration": {
+        "days": 2,
+        "hours": 8,
+        "minutes": 15,
+        "seconds": 25
+      },
+      "quantity": 6,
+      "bestSelling": true
+
+    },
+    {
+      "name": "Classic Bedside Table",
+      "imageSrc": "../assets/images/classic_bedside_table.png",
+      "prevPrice": 120.00,
+      "isNew": false,
+      "discountPercentage": -22,
+      "description": "Add elegance to your bedroom with our classic bedside table. Its timeless design and convenient storage make it a functional and stylish choice.",
+      "rating": 4.5,
+      "reviews": 8,
+      "measurements": "22x18\"",
+      "colors": ["Cherry Wood", "White", "Charcoal Gray"],
+      "selectedColor": {
+        "name": "Charcoal Gray",
+        "imageSrc": "../assets/images/classic_bedside_table_charcoal_gray.png"
+      },
+      "sku": "9933",
+      "category": ["Bedroom", "Guest Room"],
+      "offerExpiration": {
+        "days": 3,
+        "hours": 7,
+        "minutes": 55,
+        "seconds": 35
+      },
+      "quantity": 7,
+      "bestSelling": true
+
+    },
+    {
+      "name": "Modern Pendant Light",
+      "imageSrc": "../assets/images/modern_pendant_light.png",
+      "prevPrice": 120.00,
+      "isNew": false,
+      "discountPercentage": -15,
+      "description": "Brighten up your space with our modern pendant light. Its minimalist design and adjustable height make it a versatile lighting solution.",
+      "rating": 4.4,
+      "reviews": 11,
+      "measurements": "Diameter 14\"",
+      "colors": ["Brushed Nickel", "Gold", "Matte Black"],
+      "selectedColor": {
+        "name": "Gold",
+        "imageSrc": "../assets/images/modern_pendant_light_gold.png"
+      },
+      "sku": "1100",
+      "category": ["Living Room", "Dining Room"],
+      "offerExpiration": {
+        "days": 6,
+        "hours": 9,
+        "minutes": 25,
+        "seconds": 45
+      },
+      "quantity": 5,
+      "bestSelling": false
+
+    },
+    {
+      "name": "Mid-Century Accent Chair",
+      "imageSrc": "../assets/images/mid_century_accent_chair.png",
+      "prevPrice": 240.00,
+      "isNew": true,
+      "discountPercentage": -20,
+      "description": "Add a touch of retro charm with our mid-century accent chair. Its unique design and comfortable seating make it a statement piece in any room.",
+      "rating": 4.6,
+      "reviews": 13,
+      "measurements": "30x28\"",
+      "colors": ["Mustard Yellow", "Teal", "Gray"],
+      "selectedColor": {
+        "name": "Mustard Yellow",
+        "imageSrc": "../assets/images/mid_century_accent_chair_mustard_yellow.png"
+      },
+      "sku": "2233",
+      "category": ["Living Room", "Reading Nook"],
+      "offerExpiration": {
+        "days": 4,
+        "hours": 10,
+        "minutes": 15,
+        "seconds": 30
+      },
+      "quantity": 6,
+      "bestSelling": false
+
+    },
+    {
+      "name": "Industrial Bar Stool",
+      "imageSrc": "../assets/images/industrial_bar_stool.png",
+      "prevPrice": 90.00,
+      "isNew": false,
+      "discountPercentage": -12,
+      "description": "Upgrade your kitchen or bar area with our industrial bar stool. Its sturdy build and adjustable height make it a practical and stylish choice.",
+      "rating": 4.1,
+      "reviews": 9,
+      "measurements": "Seat Height 24-30\"",
+      "colors": ["Gunmetal", "Rustic Brown", "Silver"],
+      "selectedColor": {
+        "name": "Rustic Brown",
+        "imageSrc": "../assets/images/industrial_bar_stool_rustic_brown.png"
+      },
+      "sku": "3366",
+      "category": ["Kitchen", "Bar"],
+      "offerExpiration": {
+        "days": 7,
+        "hours": 11,
+        "minutes": 40,
+        "seconds": 20
+      },
+      "quantity": 3,
+      "bestSelling": false
+
+    }
+  ]
+  
