@@ -2458,7 +2458,8 @@ input[type=search] {
         height: fit-content;
         max-height: 60%;
         min-height: 60%;
-        overflow: auto;
+        overflow: scroll;
+
     }
 
 
