@@ -135,7 +135,7 @@ function showWhetherCart(pItem) {
     return positioned
     
 }
-switch (document.URL.split("/")[3]) {
+switch (document.URL.split("/")[3] || document.URL.split("/")[4]) {
   case "":
     console.log(1)
     fetch(`${document.URL.split("/")[0]}//${document.URL.split("/")[2]}/assets/data/products.json`)
