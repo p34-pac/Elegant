@@ -109,27 +109,34 @@ document.querySelector("[data-checkout='true']").addEventListener('click', (e)=>
 function showWhetherCart(pItem) {
     
     let positioned = ''
-    JSON.parse(localStorage.getItem("Cart-Items")).forEach(item => {
-
-        if(pItem.name == item.name){
-            pItem.inCart = true
-            pItem.amount = item.amount
-            
-        }else if(pItem.name != item.name){
-            if(pItem.inCart == null || pItem.inCart == undefined){
-                pItem.inCart = false
-            }
-
-        }
-        
-        if(pItem.inCart){
-            positioned =  `<div class="amount" data-change="trend" data-trend-name="${pItem.name}"><i class="minus" data-function="decrement">-</i><b class="out out-Tray_Table" data-value-self="${pItem.amount}">${pItem.amount}</b><i class="plus" data-function="increment" >+</i></div>`
-        }else{
-            positioned =  '<button data-AddCart="true">Add to cart</button>'
     
-        }
 
-    })
+    if(JSON.parse(localStorage.getItem("Cart-Items")).length !== 0){
+        JSON.parse(localStorage.getItem("Cart-Items")).forEach(item => {
+
+            if(pItem.name == item.name){
+                pItem.inCart = true
+                pItem.amount = item.amount
+                
+            }else if(pItem.name != item.name){
+                if(pItem.inCart == null || pItem.inCart == undefined){
+                    pItem.inCart = false
+                }
+    
+            }
+            
+            if(pItem.inCart){
+                positioned =  `<div class="amount" data-change="trend" data-trend-name="${pItem.name}"><i class="minus" data-function="decrement">-</i><b class="out out-Tray_Table" data-value-self="${pItem.amount}">${pItem.amount}</b><i class="plus" data-function="increment" >+</i></div>`
+            }else{
+                positioned =  '<button data-AddCart="true">Add to cart</button>'
+        
+            }
+    
+        })
+    }else{
+        positioned =  '<button data-AddCart="true">Add to cart</button>'
+
+    }
     
     
     return positioned
