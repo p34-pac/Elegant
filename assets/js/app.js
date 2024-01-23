@@ -374,7 +374,7 @@ function decreaseCartAmount(parentItemName) {
 }
 
 function addToCart(name){
-    fetch(`http://${document.URL.split("/")[2]}/assets/data/products.json`)
+    fetch(`${document.URL.split("/")[0]}//${document.URL.split("/")[2]}/assets/data/products.json`)
     .then((res) => res.json())
     .then((data) => {
         for (const key in data) {
