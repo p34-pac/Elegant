@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   } else {
-    console.log(JSON.parse(cartItems))
 
     
     showCart(0)
@@ -107,15 +106,45 @@ document.querySelector("[data-checkout='true']").addEventListener('click', (e)=>
     }
 })
 
+function showWhetherCart(pItem) {
+    
+    let positioned = ''
+    JSON.parse(localStorage.getItem("Cart-Items")).forEach(item => {
+
+        if(pItem.name == item.name){
+            pItem.inCart = true
+            pItem.amount = item.amount
+            
+        }else if(pItem.name != item.name){
+            if(pItem.inCart == null || pItem.inCart == undefined){
+                pItem.inCart = false
+            }
+
+        }
+        
+        if(pItem.inCart){
+            positioned =  `<div class="amount" data-change="trend" data-trend-name="${pItem.name}"><i class="minus" data-function="decrement">-</i><b class="out out-Tray_Table" data-value-self="${pItem.amount}">${pItem.amount}</b><i class="plus" data-function="increment" >+</i></div>`
+        }else{
+            positioned =  '<button data-AddCart="true">Add to cart</button>'
+    
+        }
+
+    })
+    
+    
+    return positioned
+    
+}
 switch (document.URL.split("/")[3]) {
   case "":
+    
     fetch(`http://${document.URL.split("/")[2]}/assets/data/products.json`)
       .then((res) => res.json())
       .then((data) => {
         for (const key in data) {
           if (Object.hasOwnProperty.call(data, key)) {
             const pItem = data[key];
-
+            
             document.querySelector(".product-card-list").innerHTML += `
                     <div class="product-card" data-item="${pItem.name}">
                     <div class="card-elements">
@@ -133,16 +162,12 @@ switch (document.URL.split("/")[3]) {
                         <div class="img-bg-box">
                             <img src="./assets/images/cardimage.png" alt="default card image">
                         </div>
-                        <div class="cart-item-control-view">
-                            <b class="price">$${pItem.price}</b>
-                            <span class="clear-item" data-function="clear-frm-cart">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.4419 5.44194C15.686 5.19786 15.686 4.80214 15.4419 4.55806C15.1979 4.31398 14.8021 4.31398 14.5581 4.55806L10 9.11612L5.44194 4.55806C5.19786 4.31398 4.80214 4.31398 4.55806 4.55806C4.31398 4.80214 4.31398 5.19786 4.55806 5.44194L9.11612 10L4.55806 14.5581C4.31398 14.8021 4.31398 15.1979 4.55806 15.4419C4.80214 15.686 5.19786 15.686 5.44194 15.4419L10 10.8839L14.5581 15.4419C14.8021 15.686 15.1979 15.686 15.4419 15.4419C15.686 15.1979 15.686 14.8021 15.4419 14.5581L10.8839 10L15.4419 5.44194Z" fill="#343839"/>
-                                </svg> 
-                            </span>
+                        
+                        <div class="showWhetherCart">
+                            ${showWhetherCart(pItem)}
                         </div>
-                        ${da}
-                        <button data-AddCart="true">Add to cart</button>
+                        
+                        
     
                     </div>
                     <div class="card-content">
@@ -200,8 +225,9 @@ switch (document.URL.split("/")[3]) {
                         <div class="img-bg-box">
                             <img src="./assets/images/cardimage.png" alt="default card image">
                         </div>
-                        <button data-AddCart="true">Add to cart</button>
-    
+                        <div class="showWhetherCart">
+                            ${showWhetherCart(pItem)}
+                        </div>    
                     </div>
                     <div class="card-content">
                         <div class="rating">
@@ -261,6 +287,10 @@ document.body.addEventListener('click', (e=>{
         if(e.target.parentElement.parentElement.hasAttribute('data-item')){
             let name = e.target.parentElement.parentElement.getAttribute('data-item')
            addToCart(name)
+        }else if(e.target.parentElement.parentElement.parentElement.hasAttribute('data-item')){
+            let name = e.target.parentElement.parentElement.parentElement.getAttribute('data-item')
+            addToCart(name)
+
         }
     }
     // check for increase in cart
@@ -281,6 +311,7 @@ document.body.addEventListener('click', (e=>{
         }
     } else if (e.target.parentElement.hasAttribute('data-change')) {
         tempEle = e.target.parentElement
+        
         if (e.target.hasAttribute('data-function')) {
             funcEle = e.target
             let funcEleFunc = funcEle.getAttribute('data-function')
@@ -318,13 +349,13 @@ document.body.addEventListener('click', (e=>{
 function increaseCartAmount(parentItemName) {
     let cartItems = JSON.parse(localStorage.getItem("Cart-Items"))
 
-
     cartItems.forEach(cartItem => {
 
         if(cartItem.name == parentItemName){
             cartItem.amount += 1
         }
     });
+
     localStorage.setItem('Cart-Items', JSON.stringify(cartItems))
 
 }
