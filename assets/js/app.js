@@ -281,7 +281,7 @@ switch (document.URL.split("/")[3]) {
 }
 switch (document.URL.split("/")[4]) {
   case "":
-    fetch(`${document.URL.split("/")[0]}//${document.URL.split("/")[2]}/assets/data/products.json`)
+    fetch(`${document.URL.split("/")[0]}//${document.URL.split("/")[2]}/Elegant/assets/data/products.json`)
       .then((res) => res.json())
       .then((data) => {
         for (const key in data) {
