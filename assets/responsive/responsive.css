@@ -3456,7 +3456,7 @@ input[type=search] {
 
 .product-card:hover .showWhetherCart{
 }
-.product-card .showWhetherCart button{
+.product-card .showWhetherCart> button{
     width: 85%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -3479,7 +3479,7 @@ input[type=search] {
          -o-transition-duration: 1s;
             transition-duration: 1s;
 }
-.product-card .showWhetherCart button:nth-child(even){
+.product-card .showWhetherCart> button:nth-child(even){
     width: 85%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -3503,7 +3503,7 @@ input[type=search] {
             transition-duration: 1s;
 }
 
-.product-card:hover .showWhetherCart button{
+.product-card:hover .showWhetherCart> button{
     width: 85%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -3520,7 +3520,7 @@ input[type=search] {
             transition-duration: 1s;
 }
 
-.product-card .showWhetherCart .amount {
+.product-card .showWhetherCart> .amount {
     width: 80%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -3546,7 +3546,7 @@ input[type=search] {
             transition-duration: 1s;
 
 }
-.product-card:hover .showWhetherCart .amount {
+.product-card:hover .showWhetherCart> .amount {
     width: 80%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -3572,7 +3572,7 @@ input[type=search] {
             transition-duration: 1s;
 
 }
- .showWhetherCart .amount i {
+ .showWhetherCart >.amount i {
     font-size: 25px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3586,13 +3586,13 @@ input[type=search] {
     width: 30px;
     margin: 0 5px;
 }
-.showWhetherCart .amount i:first-child {
+.showWhetherCart> .amount i:first-child {
     margin-left: 0;
 }
- .showWhetherCart .amount i:last-child {
+ .showWhetherCart> .amount i:last-child {
     margin-right: 0;
 }
-.showWhetherCart .amount b {
+.showWhetherCart >.amount b {
     font-size: larger;
     display: -webkit-box;
     display: -ms-flexbox;

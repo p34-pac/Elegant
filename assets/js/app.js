@@ -34,7 +34,6 @@ function showCart(pItem){
             }
         });
         let filtered = JSON.parse(localStorage.getItem('Cart-Items')).filter(item => item.name != pItem.name)
-        console.log(sm)
         filtered.push(pItem)
 
         let sortedArray = filtered.sort((a, b) => {
@@ -114,14 +113,15 @@ document.querySelector("[data-checkout='true']").addEventListener('click', (e)=>
     if(confirm('do you want to proceed with checkout')){
         alert('products are on their way')
         localStorage.setItem("Cart-Items", JSON.stringify([]));
+            document.querySelector('[data-cart-subtots="true"]').innerHTML =  `$0.00`
+            document.querySelector('[data-cart-tots="true"]').innerHTML =  `$0.00`
         showCart(0)
     }
+
 })
 
 function showWhetherCart(pItem) {
-    
     let positioned = ''
-    
 
     if(JSON.parse(localStorage.getItem("Cart-Items")).length !== 0){
         JSON.parse(localStorage.getItem("Cart-Items")).forEach(item => {
@@ -157,13 +157,15 @@ function showWhetherCart(pItem) {
 function showPage(){
     switch (document.URL.split("/")[3]) {
         case "":
+        document.querySelector(".product-card-list").innerHTML = ''
+        document.querySelector(".best-seller-cont").innerHTML += ''
+
           fetch(`${document.URL.split("/")[0]}//${document.URL.split("/")[2]}/assets/data/products.json`)
             .then((res) => res.json())
             .then((data) => {
               for (const key in data) {
                 if (Object.hasOwnProperty.call(data, key)) {
                   const pItem = data[key];
-                  
                   if(pItem.isNew){
                     document.querySelector(".product-card-list").innerHTML += `
                           <div class="product-card" data-item="${pItem.name}">
@@ -306,7 +308,8 @@ function showPage(){
       if(document.URL.split("/")[3] == "Elegant"){
         switch (document.URL.split("/")[4]) {
             case "":
-              console.log(`${document.URL.split("/")[0]}//${document.URL.split("/")[2]}/Elegant/assets/data/products.json`);
+            document.querySelector(".product-card-list").innerHTML = ''
+            document.querySelector(".best-seller-cont").innerHTML = ''
               fetch(`${document.URL.split("/")[0]}//${document.URL.split("/")[2]}/Elegant/assets/data/products.json`)
                 .then((res) => res.json())
                 .then((data) => {
@@ -572,6 +575,8 @@ function addToCart(name){
                             pItem.price = pItem.prevPrice - ((pItem.prevPrice* (-(pItem.discountPercentage)/100)))
                             pItem.amount = 1
                             pItem.id = da.length
+                            pItem.inCart = true
+                            showWhetherCart(pItem)
                             da.push(pItem)
                             localStorage.setItem('Cart-Items', JSON.stringify(da))
                             showCart(pItem)
@@ -580,7 +585,6 @@ function addToCart(name){
                     }
                 }
             })
-        showPage()
 
     }else{
         fetch(`${document.URL.split("/")[0]}//${document.URL.split("/")[2]}/Elegant/assets/data/products.json`)
@@ -594,6 +598,8 @@ function addToCart(name){
                             pItem.price = pItem.prevPrice - ((pItem.prevPrice* (-(pItem.discountPercentage)/100)))
                             pItem.amount = 1
                             pItem.id = da.length
+                            pItem.inCart = true
+                            showWhetherCart(pItem)
                             da.push(pItem)
                             localStorage.setItem('Cart-Items', JSON.stringify(da))
                             showCart(pItem)
@@ -602,7 +608,8 @@ function addToCart(name){
                     }
                 }
             })
-        showPage()
     }
+    showPage()
+
 }
 
