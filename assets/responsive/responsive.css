@@ -3465,12 +3465,37 @@ input[type=search] {
     border: none;
     outline: none;
     background-color: #141718;
+    text-transform: uppercase;
     color: white;
     font-size: 15px;
     font-weight: bolder;
     border-radius: 5px;
     margin: auto; 
     margin-left: 7.5%;
+    margin-top: 10px;
+    cursor: pointer;
+    opacity: 0%;
+    -webkit-transition-duration: 1s;
+         -o-transition-duration: 1s;
+            transition-duration: 1s;
+}
+.product-card .showWhetherCart button:nth-child(even){
+    width: 85%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: white;
+    text-transform: uppercase;
+    color: #141718;
+    font-size: 15px;
+    font-weight: bolder;
+    border-radius: 5px;
+    margin: auto; 
+    margin-left: 7.5%;
+    margin-top: 10px;
     cursor: pointer;
     opacity: 0%;
     -webkit-transition-duration: 1s;
@@ -3486,8 +3511,6 @@ input[type=search] {
     padding: 10px;
     border: none;
     outline: none;
-    background-color: #141718;
-    color: white;
     font-size: 15px;
     font-weight: bolder;
     border-radius: 5px;
