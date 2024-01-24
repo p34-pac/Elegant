@@ -17,6 +17,7 @@ function showCart(pItem){
     let filterJson = JSON.parse(localStorage.getItem('Cart-Items')).filter(item => item.price > 0)
     localStorage.setItem('Cart-Items', JSON.stringify(filterJson))
 
+
     if(pItem !== 0){
         let defPrice = pItem.price
         let repeat = []
@@ -116,6 +117,7 @@ document.querySelector("[data-checkout='true']").addEventListener('click', (e)=>
             document.querySelector('[data-cart-subtots="true"]').innerHTML =  `$0.00`
             document.querySelector('[data-cart-tots="true"]').innerHTML =  `$0.00`
         showCart(0)
+        showPage()
     }
 
 })
@@ -155,11 +157,14 @@ function showWhetherCart(pItem) {
     
 }
 function showPage(){
+    try {
+        document.querySelector(".product-card-list").innerHTML = ''
+        document.querySelector(".best-seller-cont").innerHTML = ''
+    } catch (error) {
+        
+    }
     switch (document.URL.split("/")[3]) {
         case "":
-        document.querySelector(".product-card-list").innerHTML = ''
-        document.querySelector(".best-seller-cont").innerHTML += ''
-
           fetch(`${document.URL.split("/")[0]}//${document.URL.split("/")[2]}/assets/data/products.json`)
             .then((res) => res.json())
             .then((data) => {
@@ -308,8 +313,6 @@ function showPage(){
       if(document.URL.split("/")[3] == "Elegant"){
         switch (document.URL.split("/")[4]) {
             case "":
-            document.querySelector(".product-card-list").innerHTML = ''
-            document.querySelector(".best-seller-cont").innerHTML = ''
               fetch(`${document.URL.split("/")[0]}//${document.URL.split("/")[2]}/Elegant/assets/data/products.json`)
                 .then((res) => res.json())
                 .then((data) => {
