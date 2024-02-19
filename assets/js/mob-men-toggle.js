@@ -131,6 +131,46 @@ document.body.addEventListener('click', (e) => {
         }
     }
 
+    // selectself for static
+    if (e.target.hasAttribute("class") && e.target.classList.contains('selectSelfStatic')) {
+        tempEle = e.target
+
+        if (tempEle.hasAttribute('data-self-select')) {
+            tempEle.removeAttribute('data-self-select')
+            tempEle.setAttribute('data-self-select', "true")
+
+        } else {
+            removeAttributeFromChildren(tempEle.parentElement.children, 'data-self-select')
+            tempEle.setAttribute('data-self-select', "true")
+
+        }
+    } else if (e.target.parentElement.hasAttribute("class") && e.target.parentElement.classList.contains('selectSelfStatic')) {
+        tempEle = e.target.parentElement
+
+
+        if (tempEle.hasAttribute('data-self-select')) {
+            tempEle.removeAttribute('data-self-select')
+            tempEle.setAttribute('data-self-select', "true")
+
+        } else {
+            removeAttributeFromChildren(tempEle.parentElement.children, 'data-self-select')
+            tempEle.setAttribute('data-self-select', "true")
+        }
+
+    } else if (e.target.parentElement.parentElement.hasAttribute("class") && e.target.parentElement.parentElement.classList.contains('selectSelfStatic')) {
+        tempEle = e.target.parentElement.parentElement
+
+
+        if (tempEle.hasAttribute('data-self-select')) {
+            tempEle.removeAttribute('data-self-select')
+            tempEle.setAttribute('data-self-select', "true")
+
+        } else {
+            removeAttributeFromChildren(tempEle.parentElement.children, 'data-self-select')
+            tempEle.setAttribute('data-self-select', "true")
+        }
+    }
+
     // get items with data-change as an attribute, parent's or grand's
     if (e.target.hasAttribute('data-change')) {
         tempEle = e.target
