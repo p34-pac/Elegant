@@ -153,6 +153,11 @@
 } */
 .stages-details > *{
     width: fit-content;
+    display: none;
+}
+.stages-details > #shopping-cart{
+    width: fit-content;
+    display: none;
 }
 
 
@@ -461,9 +466,7 @@ i[data-radio-checked="checked"]{
     font-size: 15px;
     width: 180px;
 }
-.input-code button{
-    padding: 0 !important;
-}
+
 .ICN-cpn{
     width: 30px;
     height: 30px;
