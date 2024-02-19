@@ -1,3 +1,6 @@
+::-webkit-scrollbar{
+    display: none;
+  }
 body {
     margin: 0;
     padding: 0;
@@ -42,12 +45,35 @@ input {
     border: 2px;
     background-color: #00000000;
 }
+
+/* remove the default increment and decrement button from input with type number */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number]::-moz-focus-inner {
+  border: 0;
+  box-shadow: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* input outline to none */
+
+input{
+  outline: none;
+}
 .copyright>span>a {
     color: #c9ccce;
     margin-left: 10px;
 }
 input[type=search] {
-    padding-right: 20px !important;
+    padding-right: 20px;
 }
 .navigation2>.search {
     position: relative;
@@ -178,6 +204,24 @@ input[type=search] {
     }
     to {
         left: 0;
+    }
+}
+@keyframes draw-menu-t-b {
+    from {
+        top: -300px;
+    }
+    to {
+        top: 20px;
+    }
+}
+@keyframes draw-menu-b-t {
+    from {
+        top: 20px;
+        transform: scale(1);
+    }
+    to {
+        top: -300px;
+        transform: scale(0.5);
     }
 }
 @-webkit-keyframes draw-menu-right {
@@ -931,7 +975,7 @@ input[type=search] {
     .cart-items::-webkit-scrollbar-thumb {
         background-color: #00000000;
     }
-    .cart-items .cart-item {
+    .cart-item {
         width: 100%;
         height: -webkit-fit-content;
         height: -moz-fit-content;
@@ -1377,6 +1421,167 @@ input[type=search] {
              -o-transition-duration: 1s;
                 transition-duration: 1s;
     }
+
+       /* styles for alert */
+
+.alert-negative{
+    width: 80vw;
+    max-width: 500px;
+    height: fit-content;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: calc((100% - 510px)/2);
+    z-index: 5;
+    backdrop-filter: blur(100px);
+    background-color: #f7292940;
+    border: 2px solid #f72929;
+    border-radius: 20px;
+    animation: draw-menu-b-t 500ms linear forwards;
+}
+.alert-negative .dialog{
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: larger;
+    margin-top: 20px;
+}
+.alert-negative .confirm{
+    width: 96%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2%;
+}
+.alert-negative .confirm button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color: #f3f5f7;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: bolder;
+    font-size: larger;
+    border-radius: 30px;
+}
+.alert-negative .confirm button:active{
+    transform: scale(0.98);
+}
+.alert-negative .confirm button:hover{
+    transform: translateY(-5px);
+    transition-duration: 1s;
+}
+/* positive */
+
+.alert-positive{
+    width: 80vw;
+    max-width: 500px;
+    height: fit-content;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: calc((100% - 510px)/2);
+    z-index: 5;
+    backdrop-filter: blur(100px);
+    background-color: #ddf7ddf7;
+    border: 2px solid #158015;
+    border-radius: 20px;
+    animation: draw-menu-b-t 500ms linear forwards;
+}
+
+
+.alert-positive .dialog{
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: larger;
+    margin-top: 20px;
+}
+.alert-positive .confirm{
+    width: 96%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2%;
+}
+.alert-positive .confirm button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color: #f3f5f7;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: bolder;
+    font-size: larger;
+    border-radius: 30px;
+}
+.alert-positive .confirm button:active{
+    transform: scale(0.98);
+}
+.alert-positive .confirm button:hover{
+    transform: translateY(-5px);
+    transition-duration: 1s;
+}
+/* neutral */
+
+.alert-neutral{
+    width: 80vw;
+    max-width: 500px;
+    height: fit-content;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: calc((100% - 510px)/2);
+    z-index: 5;
+    backdrop-filter: blur(100px);
+    background-color: #d1d1d1f7;
+    border: 2px solid #5c5c5c;
+    border-radius: 20px;
+    animation: draw-menu-b-t 500ms linear forwards;
+}
+
+
+.alert-neutral .dialog{
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: larger;
+    margin-top: 20px;
+}
+.alert-neutral .confirm{
+    width: 96%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2%;
+}
+.alert-neutral .confirm button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color: #f3f5f7;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: bolder;
+    font-size: larger;
+    border-radius: 30px;
+}
+.alert-neutral .confirm button:active{
+    transform: scale(0.98);
+}
+.alert-neutral .confirm button:hover{
+    transform: translateY(-5px);
+    transition-duration: 1s;
+}
 }
 @media screen and (min-width: 850px) and (max-width: 1050) {}
 @media screen and (max-width: 860px) {
@@ -2150,6 +2355,166 @@ input[type=search] {
     footer .bottom-bar .socials {
         margin-top: 10px;
     }
+         /* styles for alert */
+
+.alert-negative{
+    width: 80vw;
+    max-width: 500px;
+    height: fit-content;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10%;
+    z-index: 5;
+    backdrop-filter: blur(100px);
+    background-color: #f7292940;
+    border: 2px solid #f72929;
+    border-radius: 20px;
+    animation: draw-menu-b-t 500ms linear forwards;
+}
+.alert-negative .dialog{
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: larger;
+    margin-top: 20px;
+}
+.alert-negative .confirm{
+    width: 96%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2%;
+}
+.alert-negative .confirm button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color: #f3f5f7;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: bolder;
+    font-size: larger;
+    border-radius: 30px;
+}
+.alert-negative .confirm button:active{
+    transform: scale(0.98);
+}
+.alert-negative .confirm button:hover{
+    transform: translateY(-5px);
+    transition-duration: 1s;
+}
+/* positive */
+
+.alert-positive{
+    width: 80%;
+    max-width: 500px;
+    height: fit-content;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10%;
+    z-index: 5;
+    backdrop-filter: blur(100px);
+    background-color: #ddf7ddf7;
+    border: 2px solid #158015;
+    border-radius: 20px;
+    animation: draw-menu-b-t 500ms linear forwards;
+}
+
+
+.alert-positive .dialog{
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: larger;
+    margin-top: 20px;
+}
+.alert-positive .confirm{
+    width: 96%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2%;
+}
+.alert-positive .confirm button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color: #f3f5f7;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: bolder;
+    font-size: larger;
+    border-radius: 30px;
+}
+.alert-positive .confirm button:active{
+    transform: scale(0.98);
+}
+.alert-positive .confirm button:hover{
+    transform: translateY(-5px);
+    transition-duration: 1s;
+}
+/* neutral */
+
+.alert-neutral{
+    width: 80%;
+    max-width: 500px;
+    height: fit-content;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 10%;
+    z-index: 5;
+    backdrop-filter: blur(100px);
+    background-color: #d1d1d1f7;
+    border: 2px solid #5c5c5c;
+    border-radius: 20px;
+    animation: draw-menu-b-t 500ms linear forwards;
+}
+
+
+.alert-neutral .dialog{
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: larger;
+    margin-top: 20px;
+}
+.alert-neutral .confirm{
+    width: 96%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2%;
+}
+.alert-neutral .confirm button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color: #f3f5f7;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: bolder;
+    font-size: larger;
+    border-radius: 30px;
+}
+.alert-neutral .confirm button:active{
+    transform: scale(0.98);
+}
+.alert-neutral .confirm button:hover{
+    transform: translateY(-5px);
+    transition-duration: 1s;
+}
 }
 @media screen and (max-width: 500px) {
     .notification-bar {
@@ -3324,6 +3689,170 @@ input[type=search] {
         outline: none;
     }
 }
+@media screen and (max-width: 510px) {  
+             /* styles for alert */
+
+.alert-negative{
+    width: 80vw;
+    max-width: 500px;
+    height: fit-content;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 7%;
+    z-index: 5;
+    backdrop-filter: blur(100px);
+    background-color: #f7292940;
+    border: 2px solid #f72929;
+    border-radius: 20px;
+    animation: draw-menu-b-t 500ms linear forwards;
+}
+.alert-negative .dialog{
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 5dvw;
+    margin-top: 20px;
+}
+.alert-negative .confirm{
+    width: 96%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2%;
+}
+.alert-negative .confirm button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color: #f3f5f7;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: bolder;
+    font-size: 5dvw;
+    border-radius: 30px;
+}
+.alert-negative .confirm button:active{
+    transform: scale(0.98);
+}
+.alert-negative .confirm button:hover{
+    transform: translateY(-5px);
+    transition-duration: 1s;
+}
+/* positive */
+
+.alert-positive{
+    width: 80%;
+    max-width: 500px;
+    height: fit-content;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 7%;
+    z-index: 5;
+    backdrop-filter: blur(100px);
+    background-color: #ddf7ddf7;
+    border: 2px solid #158015;
+    border-radius: 20px;
+    animation: draw-menu-b-t 500ms linear forwards;
+}
+
+
+.alert-positive .dialog{
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 5dvw;
+    margin-top: 20px;
+}
+.alert-positive .confirm{
+    width: 96%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2%;
+}
+.alert-positive .confirm button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color: #f3f5f7;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: bolder;
+    font-size: 5dvw;
+    border-radius: 30px;
+}
+.alert-positive .confirm button:active{
+    transform: scale(0.98);
+}
+.alert-positive .confirm button:hover{
+    transform: translateY(-5px);
+    transition-duration: 1s;
+}
+
+/* neutral */
+
+
+.alert-neutral{
+    width: 80%;
+    max-width: 500px;
+    height: fit-content;
+    padding: 10px;
+    position: fixed;
+    top: 10px;
+    left: 7%;
+    z-index: 5;
+    backdrop-filter: blur(100px);
+    background-color: #d1d1d1f7;
+    border: 2px solid #5c5c5c;
+    border-radius: 20px;
+    animation: draw-menu-b-t 500ms linear forwards;
+}
+
+
+.alert-neutral .dialog{
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    font-size: 5dvw;
+    margin-top: 20px;
+}
+.alert-neutral .confirm{
+    width: 96%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 2%;
+}
+.alert-neutral .confirm button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color: #f3f5f7;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: bolder;
+    font-size: 5dvw;
+    border-radius: 30px;
+}
+.alert-neutral .confirm button:active{
+    transform: scale(0.98);
+}
+.alert-neutral .confirm button:hover{
+    transform: translateY(-5px);
+    transition-duration: 1s;
+}
+}
 
 
 
@@ -3331,7 +3860,7 @@ input[type=search] {
 /* dropdown menu */
 
 .dropMenu {
-    width: 98%;
+    width: 100%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -3352,8 +3881,10 @@ input[type=search] {
         -ms-flex-pack: center;
             justify-content: center;
     position: relative;
+    
 
 }
+
 .dropMenu .selected {
     width: 100%;
     height: -webkit-fit-content;
@@ -3404,6 +3935,7 @@ input[type=search] {
     height: -moz-fit-content;
     height: fit-content;
 }
+
 .dropMenu .dropList.closed {
     display: none !important;
 }
@@ -3414,14 +3946,15 @@ input[type=search] {
     width: 96%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
-    height: fit-content;
+    max-height: 200px;
+    overflow-y: scroll;
     border-radius: 10px;
     background-color: white;
     -webkit-box-shadow: 0 0 3px #6c7275;
             box-shadow: 0 0 3px #6c7275;
 }
 .dropMenu .dropList>ul li {
-    width: 94%;
+    width: 100%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -3454,9 +3987,10 @@ input[type=search] {
 
 }
 
+
 .product-card:hover .showWhetherCart{
 }
-.product-card .showWhetherCart> button{
+.product-card .showWhetherCart button{
     width: 85%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -3479,7 +4013,7 @@ input[type=search] {
          -o-transition-duration: 1s;
             transition-duration: 1s;
 }
-.product-card .showWhetherCart> button:nth-child(even){
+.product-card .showWhetherCart button:nth-child(even){
     width: 85%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -3503,7 +4037,7 @@ input[type=search] {
             transition-duration: 1s;
 }
 
-.product-card:hover .showWhetherCart> button{
+.product-card:hover .showWhetherCart button{
     width: 85%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
@@ -3603,4 +4137,9 @@ input[type=search] {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+}
+
+.alert-positive.shown, .alert-negative.shown, .alert-neutral.shown{
+    animation: draw-menu-t-b 500ms linear forwards !important;
+    z-index: 10;
 }
