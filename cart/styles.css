@@ -157,7 +157,7 @@
 }
 .stages-details > #shopping-cart{
     width: fit-content;
-    display: none;
+    display: block;
 }
 
 
