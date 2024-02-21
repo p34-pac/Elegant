@@ -76,25 +76,27 @@ document.body.addEventListener('click', (e) => {
 
     if (e.target.hasAttribute('data-value')) {
         tempEle = e.target
-        for (const key in tempEle.parentElement.children) {
-            if (Object.hasOwnProperty.call(tempEle.parentElement.children, key)) {
-                const theLiz = tempEle.parentElement.children[key];
-                if (theLiz.hasAttribute("aria-selected")) {
-                    theLiz.removeAttribute("aria-selected")
+        if(!tempEle.hasAttribute("data-invalid")){
+            let valueHolder = findChild(e.target.parentElement.parentElement.parentElement.children, 'text')
+            for (const key in tempEle.parentElement.children) {
+                if (Object.hasOwnProperty.call(tempEle.parentElement.children, key)) {
+                    const theLiz = tempEle.parentElement.children[key];
+                    if (theLiz.hasAttribute("aria-selected")) {
+                        theLiz.removeAttribute("aria-selected")
+                    }
                 }
             }
+    
+            tempEle.setAttribute("aria-selected", "true")
+            valueHolder.innerText = ''
+            let spl = tempEle.getAttribute('data-value').split('-').forEach(str => {
+                    valueHolder.innerText += " " + str
+            });
         }
-
-        tempEle.setAttribute("aria-selected", "true")
         // console.log(tempEle.parentElement.parentElement.parentElement.classList.toggle('dropped'))
         prev = findChild(tempEle.parentElement.parentElement.parentElement.children, 'dropList')
         prev.classList.add('closed')
-        let valueHolder = findChild(e.target.parentElement.parentElement.parentElement.children, 'text')
 
-        valueHolder.innerText = ''
-        let spl = tempEle.getAttribute('data-value').split('-').forEach(str => {
-            valueHolder.innerText += " " + str
-        });
 
     }
 
