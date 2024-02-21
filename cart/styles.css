@@ -422,7 +422,7 @@ i[data-radio-checked="checked"]{
     font-weight: 700;
 }
 .smScrn{
-    display: none;
+    display: none !important;
 }
 
 
@@ -533,6 +533,20 @@ aside.form{
     height: fit-content;
     /* margin-bottom: 200px; */
 
+}
+aside.form button, .checkout-content > button{
+    width: calc(100% - 10px);
+    height: fit-content;
+    padding: 10px 0;
+    background-color: #141718;
+    color: white;
+    border-radius: 10px;
+    font-size: larger;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    margin-top: 20px;
 }
 .form form{
     width: calc(100% - 10px);
@@ -725,7 +739,7 @@ form label{
 .search .not-found {
   width: 100%;
   height: fit-content;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -902,6 +916,7 @@ form label{
     padding: 10px 30px;
     border-radius: 30px;
     color: white;
+
 }
 
 /* -------------- */
@@ -962,23 +977,26 @@ form label{
         align-items: flex-start;
         justify-content: space-between;
         flex-direction: column;
-        width: 85% !important;
+        width: 90% !important;
         
     }
     .checkout-content{
-        width: 85% !important;
+        width: 90% !important;
         align-items: flex-start;
         justify-content: space-between;
         flex-direction: column;
     }
     .order-complete-content{
-        width: 85% !important;
+        width: 90% !important;
     }
     aside.form{
         width: 100%;
         margin-right: 0;
         height: fit-content;
     
+    }
+    .form form{
+        width: 100%;
     }
     .coupon{
         margin: 50px 0;
@@ -987,7 +1005,7 @@ form label{
 
 
     .main-cart-summary{
-        width: 90%;
+        width: 100%;
         margin: auto;
         /* margin-left: 0; */
     }
@@ -995,7 +1013,7 @@ form label{
         display: none !important;
     }
     .smScrn{
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         width: 100% !important;
         height: fit-content;
@@ -1010,6 +1028,10 @@ form label{
         height: 40px;
         margin-right: 10px;
 
+    }
+
+    .coupon-disp b{
+        font-size: 17px;
     }
 }
 @media screen and (max-width: 800px){
@@ -1028,10 +1050,10 @@ form label{
         height: 15px;
     }
     .coupon-disp b span{
-        font-size: 3.5dvw;
+        font-size: 4.5dvw;
     }
     .coupon-disp b.dprc{
-        font-size: 3.5dvw;
+        font-size: 4.5dvw;
     }
     .main-cart-summary{
         width: 100%;

@@ -197,7 +197,7 @@
         <section class="main-cart-head">
             <h1>Cart</h1>
             <div class="stages-cont">
-                <ul class="stages">
+                <ul class="stages" data-section-control>
                     <li data-location="shopping-cart" class="stage selectSelfStatic" data-accessible="true" data-completed="true" data-present="true" data-self-select>
                         <i class="stgNum">1</i>
                         <b class="stgName">Shopping cart</b>
@@ -214,7 +214,7 @@
             </div>
         </section>
         <aside class="stages-details-cont">
-            <section class="stages-details">
+            <section class="stages-details" data-sections>
                 <section id="shopping-cart">
                     <section class="main-cart-display">
                 
@@ -393,29 +393,9 @@
                                         </li>
                                         <li class="dropList closed">
                                             <div class="search">
-                                                <input type="search" placeholder='Search For Bank'>
-                    
+                                                <input type="search" placeholder='Search For country' id="country-search">
+        
                                                     <div class="not-found">
-                                                        <!-- <i class="ICN-cancel">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 512 512">
-                    
-                                                                <g data-name="Layer 2" id="Layer_2">
-                    
-                                                                    <g data-name="E410, Error, Media, media player, multimedia" id="E410_Error_Media_media_player_multimedia">
-                    
-                                                                        <circle class="cls-1" cx="256" cy="256" r="246"/>
-                    
-                                                                        <line class="cls-1" x1="371.47" x2="140.53" y1="140.53" y2="371.47"/>
-                    
-                                                                        <line class="cls-1" x1="371.47" x2="140.53" y1="371.47" y2="140.53"/>
-                    
-                                                                    </g>
-                    
-                                                                </g>
-                    
-                                                            </svg>
-                                                        </i>
-                                                        <b>Check your connection</b> -->
                                                     </div>
                                             </div>
                                           <ul>
@@ -476,6 +456,7 @@
                                     </label>
                                 </div>
                             </form>
+                            <button class="wdScrn">Place Order</button>
                         </aside>
                         <aside class="main-cart-summary">
                             <h1>Order Summary</h1>
@@ -531,6 +512,8 @@
                                 </span>
                             </section>
                         </aside>
+                        <button class="smScrn">Place Order</button>
+
                     </section>
                 </section>
                 <section id="order-complete">
