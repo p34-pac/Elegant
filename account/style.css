@@ -1,0 +1,546 @@
+/* account main */
+main.account-main{
+    width: 85vw;
+    margin: auto;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+/* main account content */
+.main-account-content{
+    width: 100%;
+    height: fit-content;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 30% calc(70% - 10px);
+    align-items: flex-start;
+    justify-content: center;
+}
+.main-account-content > *{
+    padding: 10px;
+}
+.main-account-content > *:not(:first-child){
+    margin-left: 20px;
+}
+
+/* account-nav-card */
+.account-nav-card{
+    background-color: #F3F5F7;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.account-nav-card .dp{
+    width: fit-content;
+    max-width: 100%;
+    height: fit-content;
+    position: relative;
+}
+.dp .dp-img-box{
+    width: 100px;
+    height: 100px;
+}
+.dp-img-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+i.ICN-cam{
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    background-color: black;
+    border: 1px solid #F3F5F7;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    cursor: pointer;
+}
+i.ICN-cam > svg{
+    width: 15px;
+    height: 15px;
+}
+.account-nav-card .name{
+    font-size: 20px;
+    margin-top: 20px;
+    font-size: 17px;
+    text-align: center;
+}
+.account-nav-card nav{
+    width: 100%;
+    height: fit-content;
+    margin-top: 20px;
+}
+.account-nav-card nav ul{
+    list-style: none;
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: flex-start;
+    padding: 0;
+}
+.account-nav-card nav ul li{
+    margin: 0;
+    height: fit-content;
+    padding-bottom: 10px;
+
+}
+.account-nav-card nav ul li[data-self-select], .account-nav-card nav ul li[aria-selected]{
+    border-bottom: 1px solid black;
+    padding-bottom: 9px;
+    background-color: #00000000 !important;
+
+}
+.account-nav-card nav ul li[data-self-select] .locName{
+    color: black;
+}
+.account-nav-card nav ul li:not(:first-child){
+    margin-top: 20px;
+}
+.account-nav-card nav ul li .locName{
+    font-size: 17px;
+    color: #6C7275;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+/* account-nav-details-cont */
+.account-nav-details{
+    padding-top: 0;
+}
+.account-nav-details-cont{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+.account-nav-details-cont > * > h1{
+    margin-top: 0;
+    text-transform: capitalize;
+    font-size: 25px;
+}
+
+
+#account-details{
+    width: 100%;
+    height: fit-content;
+    margin-top: 0;
+    padding-top: 0;
+}
+.form form{
+    width: calc(100% - 10px);
+    height: fit-content;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+}
+
+.form>button{
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    margin-left: 20px;
+    border-radius: 5px;
+    font-size: 17px;
+    text-transform: capitalize;
+}
+.form form:not(:first-child){
+    margin-top: 20px;
+}
+.form form>*{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.form form{
+    padding-top: 0;
+}
+.form form h1{
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.form form h1{
+    font-size: larger;
+    margin: 10px 0;
+    font-weight: 900;
+    color: #000000;
+}
+.form form>*:not(:nth-child(2)), .form form>*:not(:nth-child(1)){
+    margin-top: 20px;
+}
+
+
+.form form>* > input{
+    width: 100%;
+    height: fit-content;
+    border:  2px solid #6C7275;
+    padding: 10px;
+    border-radius: 5px;
+}
+.form form .name label input{
+    width: fit-content;
+}
+
+
+
+
+form label::before{
+    margin-bottom: 10px;
+    font-size: small;
+    font-weight: 900;
+    color: #6C7275;
+    text-transform: uppercase;
+}
+form label::after{
+    margin-top: 10px;
+    font-weight: normal;
+    color: #6C7275;
+    font-size: smaller;
+}
+label[for=firstName]::before{
+    content: 'First Name *';
+}
+label[for=lastName]::before{
+    content: 'Last Name *';
+}
+label[for=displayName]::before{
+    content: 'Display Name *';
+}
+label[for=displayName]::after{
+    content: 'This will be how your name will be displayed in the account section and in reviews';
+}
+label[for=email]::before{
+    content: 'Email *';
+}
+
+label[for=oldPassword]::before{
+    content: 'Old Password';
+}
+label[for=newPassword]::before{
+    content: 'New Password';
+}
+label[for=repeatPassword]::before{
+    content: 'Repeat Password';
+}
+
+
+
+
+
+
+
+
+/* address */
+#address{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 0;
+}
+.address-card-cont{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.address-card{
+    height: fit-content;
+    border: 2px solid #6C7275;
+    border-radius: 5px;
+    padding: 10px;
+}
+.address-card .top-title{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.top-title > *{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    gap: 5px;
+}
+.top-title .edit{
+    cursor: pointer;
+}
+.ICN-edit{
+    width: fit-content;
+    height: fit-content;
+}
+.ICN-edit svg{
+    width: 15px;
+    height: 15px;
+}
+.address-card .context{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.address-card .context>*{
+    font-size: 15px;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+/* ------------------- */
+#orders{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 0;
+}
+#orders .orders-history{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding-top: 0;
+}
+
+.orders-history .tr{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 2px solid #6C7275;
+    padding-bottom: 10px;
+}
+.thead .td{
+    color: #6c7275;
+    padding: 10px;
+}
+.tbody .td{
+    color: #141718;
+    padding: 10px;
+}
+.orders-history > *:not(:first-child){
+    margin-top: 20px;
+}
+.orders-history .thead{
+    width: 100%;
+    height: fit-content;
+}
+.orders-history .tbody{
+    width: 100%;
+    height: fit-content;
+
+}
+
+.orders-history .tbody > *{
+    padding-bottom: 20px;
+}
+.orders-history .tbody > *:not(:first-child){
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* smScrn */
+.smScrn{
+    display: none !important;
+}
+/* -------------- */
+
+@media screen and (max-width: 900px) {
+    main.account-main{
+        width: 100vw;
+    }
+    /* main account content */
+    .main-account-content{
+        grid-template-columns: 35% 65%;
+    }
+    .top-title > *{
+        font-size: 15px;
+    }
+    .address-card-cont{
+        gap: 10px;
+    }
+
+}
+@media screen and (max-width: 860px) {
+    .address-card-cont{
+        grid-template-columns: 100%;
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 700px) {
+
+    main.account-main{
+        width: 100vw;
+    }
+    .wdScrn{
+        display: none;
+    }
+    .smScrn{
+        display: block !important;
+        width: 100%;
+    }
+    .orders-history.smScrn{
+        display: none !important;
+    }
+    /* main account content */
+    .main-account-content{
+        width: 100%;
+        height: fit-content;
+        padding: 20px;
+        margin-bottom: 20px;
+        display: grid;
+        grid-template-columns: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .main-account-content > *:first-child{
+        padding: 20px;
+    }
+    .main-account-content > *:last-child{
+        padding: 0;
+        margin-top: 20px;
+    }
+    .form form{
+        width: 100%;
+        padding: 20px 0;
+    }
+    .form>button{
+        margin-left: 0;
+    }
+    .main-account-content > *:not(:first-child){
+        margin-left: 0;
+    }
+    .smScrn .dropMenu .selected {
+        background-color: white;
+    }
+    .smScrn .dropMenu .dropList>ul {
+        max-height: fit-content;
+        overflow-y: hidden;
+    }
+
+
+    .address-card-cont{
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+@media screen and (max-width: 460px) {
+    .address-card-cont{
+        grid-template-columns: 100%;
+        gap: 20px;
+    }
+    .orders-history.wdScrn{
+        display: none !important;
+    }
+    .orders-history.smScrn{
+        display: block !important;
+        width: 100%;
+        margin-top: 50px;
+    }
+    .orders-history.smScrn .order{
+        width: 100%;
+        height: fit-content;
+        border-bottom: 2px solid #6C7275;
+        padding-bottom: 20px;
+        margin-top: 20px;
+    }
+    .orders-history.smScrn .order:first-child{
+        margin-top: 0;
+    }
+    .orders-history.smScrn table{
+        width: 100% !important;
+        height: fit-content;
+        margin: auto;
+    }
+    .orders-history.smScrn table tbody tr{
+        width: 100%;
+        display: flex;
+        height: fit-content;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .orders-history.smScrn table tbody tr:not(:first-child){
+        margin-top: 20px;
+    
+    }
+    .orders-history.smScrn table tbody tr td{
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+    .orders-history.smScrn table tbody tr td.column-title{
+        color: #6c7275;
+    }
+}
+@media screen and (max-width: 300px) {
+    h1{
+        font-size: 7dvw;
+    }
+    .account-nav-details-cont > * > h1{
+        font-size: 7dvw;
+    }
+    .account-nav-card .name{
+        font-size: 6dvw;
+    }
+    .dp .dp-img-box{
+        width: 50px;
+        height: 50px;
+    }
+    .orders-history.smScrn table tbody tr td{
+        font-size: 5dvw;
+    }
+    .dropMenu{
+        font-size: 5dvw !important;
+    }
+}

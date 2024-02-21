@@ -45,6 +45,9 @@ input {
     border: 2px;
     background-color: #00000000;
 }
+.selectSelfStatic, .selectSelf{
+    cursor: pointer;
+}
 
 /* remove the default increment and decrement button from input with type number */
 input[type=number]::-webkit-inner-spin-button,
@@ -186,6 +189,7 @@ input[type=search] {
     -webkit-animation: draw-menu-back-right 250ms linear forwards !important;
             animation: draw-menu-back-right 250ms linear forwards !important;
 }
+
 
 
 @-webkit-keyframes draw-menu {
@@ -526,9 +530,10 @@ input[type=search] {
     }
     .navigation-bar {
         position: static;
-        width: 85%;
-        padding-left: 7.5%;
-        padding-right: 7.5%;
+        margin: auto !important;
+        width: 95% !important;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
         height: -webkit-fit-content;
         height: -moz-fit-content;
         height: fit-content;
@@ -2121,6 +2126,15 @@ input[type=search] {
         height: fit-content;
     }
 }
+@media screen and (min-width: 770px) {
+    .cart-menu {
+        width: 500px;
+
+    }
+    .cart-menu .cover-rest {
+        left: -500px;
+    }
+}
 @media screen and (max-width: 600px) {
 
     footer {
@@ -2613,9 +2627,10 @@ input[type=search] {
         right: 10px;
     }
     .navigation-bar {
-        width: 85%;
-        padding-left: 7.5%;
-        padding-right: 7.5%;
+        margin: auto !important;
+        width: 95% !important;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
         height: -webkit-fit-content;
         height: -moz-fit-content;
         height: fit-content;
@@ -3941,9 +3956,10 @@ input[type=search] {
 }
 .dropMenu .dropList>ul {
     list-style-type: none;
+    display: block;
     padding: 2%;
     margin-top: 10px;
-    width: 96%;
+    width: 100%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     max-height: 200px;
@@ -3952,6 +3968,14 @@ input[type=search] {
     background-color: white;
     -webkit-box-shadow: 0 0 3px #6c7275;
             box-shadow: 0 0 3px #6c7275;
+}
+.dropMenu .dropList>ul::-webkit-scrollbar{
+    display: block;
+    width: 3px;
+}
+.dropMenu .dropList>ul::-webkit-scrollbar-thumb{
+    background-color: #6c7275;
+
 }
 .dropMenu .dropList>ul li {
     width: 100%;
